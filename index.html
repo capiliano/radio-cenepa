@@ -13,6 +13,7 @@
 
 <title>Radio Cenepa | En Vivo</title>
 
+
 <style>
 
 /* =====================================================
@@ -45,12 +46,12 @@ body {
     background:
         radial-gradient(
             circle at 10% 20%,
-            rgba(40, 210, 120, .18),
+            rgba(40,210,120,.18),
             transparent 30%
         ),
         radial-gradient(
             circle at 90% 70%,
-            rgba(20, 160, 90, .16),
+            rgba(20,160,90,.16),
             transparent 30%
         ),
         #06100b;
@@ -58,7 +59,7 @@ body {
 
 
 /* =====================================================
-   FONDO ANIMADO
+   FONDO VERDE ANIMADO
 ===================================================== */
 
 body::before,
@@ -110,22 +111,22 @@ body::after {
 @keyframes movimientoVerde {
 
     from {
-        transform: translate(0, 0) scale(1);
+        transform: translate(0,0) scale(1);
     }
 
     to {
-        transform: translate(220px, 180px) scale(1.25);
+        transform: translate(220px,180px) scale(1.25);
     }
 }
 
 @keyframes movimientoVerde2 {
 
     from {
-        transform: translate(0, 0) scale(1);
+        transform: translate(0,0) scale(1);
     }
 
     to {
-        transform: translate(-180px, -160px) scale(1.3);
+        transform: translate(-180px,-160px) scale(1.3);
     }
 }
 
@@ -156,7 +157,7 @@ body::after {
 
 .reproductor {
 
-    width: min(1200px, 94vw);
+    width: min(1200px,94vw);
 
     aspect-ratio: 16 / 9;
 
@@ -180,13 +181,13 @@ body::after {
     border-radius: 30px;
 
     border:
-        1px solid rgba(80, 180, 120, .35);
+        1px solid rgba(80,180,120,.35);
 
     background:
         linear-gradient(
             145deg,
-            rgba(20, 40, 30, .94),
-            rgba(7, 18, 12, .96)
+            rgba(20,40,30,.94),
+            rgba(7,18,12,.96)
         );
 
     box-shadow:
@@ -387,25 +388,24 @@ body::after {
         paused;
 }
 
-.reproductor.reproduciendo
-.onda {
+.reproductor.reproduciendo .onda {
 
     animation-play-state:
         running;
 }
 
 
-/* Diferentes velocidades */
+/* Velocidades */
 
-.onda:nth-child(1) { animation-duration:.65s; }
-.onda:nth-child(2) { animation-duration:.85s; }
-.onda:nth-child(3) { animation-duration:.55s; }
-.onda:nth-child(4) { animation-duration:.95s; }
-.onda:nth-child(5) { animation-duration:.70s; }
-.onda:nth-child(6) { animation-duration:1s; }
-.onda:nth-child(7) { animation-duration:.60s; }
-.onda:nth-child(8) { animation-duration:.80s; }
-.onda:nth-child(9) { animation-duration:.50s; }
+.onda:nth-child(1)  { animation-duration:.65s; }
+.onda:nth-child(2)  { animation-duration:.85s; }
+.onda:nth-child(3)  { animation-duration:.55s; }
+.onda:nth-child(4)  { animation-duration:.95s; }
+.onda:nth-child(5)  { animation-duration:.70s; }
+.onda:nth-child(6)  { animation-duration:1s; }
+.onda:nth-child(7)  { animation-duration:.60s; }
+.onda:nth-child(8)  { animation-duration:.80s; }
+.onda:nth-child(9)  { animation-duration:.50s; }
 .onda:nth-child(10) { animation-duration:.90s; }
 .onda:nth-child(11) { animation-duration:.55s; }
 .onda:nth-child(12) { animation-duration:.75s; }
@@ -471,7 +471,7 @@ body::after {
 
 
 /* =====================================================
-   BOTON PLAY
+   BOTÓN PLAY
 ===================================================== */
 
 .boton-play {
@@ -508,8 +508,7 @@ body::after {
     padding-left: 4px;
 
     box-shadow:
-        0 12px 35px
-        rgba(34,190,112,.28);
+        0 12px 35px rgba(34,190,112,.28);
 
     transition:
         transform .2s,
@@ -522,8 +521,7 @@ body::after {
         scale(1.06);
 
     box-shadow:
-        0 15px 40px
-        rgba(34,190,112,.4);
+        0 15px 40px rgba(34,190,112,.4);
 }
 
 .boton-play.reproduciendo {
@@ -567,7 +565,7 @@ body::after {
 
 
 /* =====================================================
-   CARRUSEL
+   CARRUSEL PC
 ===================================================== */
 
 .galeria {
@@ -586,8 +584,7 @@ body::after {
         #0b1811;
 
     box-shadow:
-        0 20px 45px
-        rgba(0,0,0,.5);
+        0 20px 45px rgba(0,0,0,.5);
 }
 
 .foto {
@@ -693,7 +690,7 @@ body::after {
 
 
 /* =====================================================
-   REDES SOCIALES
+   REDES
 ===================================================== */
 
 .redes {
@@ -755,29 +752,49 @@ body::after {
 
 
 /* =====================================================
-   OCULTAMOS ESTADO
+   ESTADO OCULTO
 ===================================================== */
 
 .estado {
-
     display: none;
 }
 
 
 /* =====================================================
-   CELULAR
+   =====================================================
+   📱 VERSIÓN MÓVIL
+   =====================================================
 ===================================================== */
 
 @media(max-width:700px) {
 
+
+    html,
     body {
 
-        overflow:
-            auto;
+        width: 100%;
 
-        min-height:
-            100vh;
+        min-height: 100%;
+
+        height: auto;
     }
+
+
+    body {
+
+        overflow-y: auto;
+
+        overflow-x: hidden;
+
+        background:
+            radial-gradient(
+                circle at 50% 0%,
+                rgba(35,190,110,.22),
+                transparent 38%
+            ),
+            #06100b;
+    }
+
 
     .pantalla {
 
@@ -788,16 +805,21 @@ body::after {
         height: auto;
 
         padding:
-            20px 16px 25px;
+            15px 12px;
+
+        display: flex;
 
         align-items:
             flex-start;
+
+        justify-content:
+            center;
     }
 
 
-    /* -----------------------------------------------
+    /* ===============================================
        REPRODUCTOR MOVIL
-    ----------------------------------------------- */
+    =============================================== */
 
     .reproductor {
 
@@ -805,18 +827,18 @@ body::after {
 
         max-width: 430px;
 
-        aspect-ratio: auto;
-
         min-height:
-            calc(100vh - 40px);
+            calc(100vh - 30px);
+
+        height: auto;
+
+        aspect-ratio: auto;
 
         display: flex;
 
-        flex-direction:
-            column;
+        flex-direction: column;
 
-        align-items:
-            center;
+        align-items: center;
 
         justify-content:
             flex-start;
@@ -829,18 +851,21 @@ body::after {
         border-radius:
             28px;
 
+        overflow:
+            hidden;
+
         background:
             linear-gradient(
                 145deg,
-                rgba(18,39,28,.94),
-                rgba(6,17,11,.97)
+                rgba(18,39,28,.96),
+                rgba(6,17,11,.98)
             );
     }
 
 
-    /* -----------------------------------------------
-       TITULO ARRIBA
-    ----------------------------------------------- */
+    /* ===============================================
+       INFORMACIÓN
+    =============================================== */
 
     .informacion {
 
@@ -848,27 +873,46 @@ body::after {
             contents;
     }
 
-    .badge {
 
-        order: 1;
-
-        margin-bottom:
-            12px;
-    }
+    /* ===============================================
+       RADIO CENEPA ARRIBA
+    =============================================== */
 
     .informacion h1 {
 
-        order: 2;
-
-        font-size:
-            28px;
+        order: 1;
 
         margin:
-            0 0 20px;
+            0 0 22px;
+
+        font-size:
+            29px;
+
+        line-height:
+            1;
 
         letter-spacing:
-            .5px;
+            .8px;
+
+        text-align:
+            center;
     }
+
+
+    /* ===============================================
+       OCULTAR BADGE EN MÓVIL
+    =============================================== */
+
+    .badge {
+
+        display:
+            none;
+    }
+
+
+    /* ===============================================
+       OCULTAR SUBTÍTULO
+    =============================================== */
 
     .programa {
 
@@ -877,83 +921,104 @@ body::after {
     }
 
 
-    /* -----------------------------------------------
-       CARATULA
-    ----------------------------------------------- */
+    /* ===============================================
+       CARÁTULA
+    =============================================== */
 
     .caratula {
 
-        order: 3;
+        order: 2;
 
         width:
-            min(78vw, 310px);
+            min(78vw,310px);
 
         max-width:
             310px;
 
+        flex-shrink:
+            0;
+
+        margin:
+            0 auto 26px;
+
         border-radius:
             24px;
 
-        margin-bottom:
-            25px;
-
         box-shadow:
-            0 20px 50px rgba(0,0,0,.55);
+            0 22px 55px rgba(0,0,0,.55);
     }
 
 
-    /* -----------------------------------------------
+    /* ===============================================
        ONDAS
-    ----------------------------------------------- */
+    =============================================== */
 
     .barra-ondas {
 
-        order: 4;
+        order: 3;
 
         width:
-            82%;
+            86%;
 
         max-width:
-            330px;
+            340px;
 
         height:
             58px;
 
+        flex-shrink:
+            0;
+
         margin:
-            0 auto 22px;
+            0 auto 24px;
 
         gap:
             4px;
     }
 
 
-    /* -----------------------------------------------
+    /* ===============================================
        CONTROLES
-    ----------------------------------------------- */
+    =============================================== */
 
     .controles {
 
-        order: 5;
+        order: 4;
 
-        width: 100%;
+        width:
+            100%;
+
+        flex-shrink:
+            0;
 
         gap:
             18px;
     }
 
 
+    /* ===============================================
+       PLAY
+    =============================================== */
+
     .boton-play {
 
         width:
-            72px;
+            74px;
 
         height:
-            72px;
+            74px;
 
         font-size:
             25px;
+
+        box-shadow:
+            0 14px 38px rgba(34,190,112,.30);
     }
 
+
+    /* ===============================================
+       VOLUMEN
+    =============================================== */
 
     .volumen {
 
@@ -961,75 +1026,146 @@ body::after {
             100%;
 
         max-width:
-            270px;
+            280px;
 
         gap:
             10px;
+
+        margin:
+            0 auto;
     }
 
     .volumen input {
 
         width:
-            190px;
+            200px;
+
+        height:
+            5px;
     }
 
 
-    /* -----------------------------------------------
-       CARRUSEL OCULTO EN MOVIL
-    ----------------------------------------------- */
+    /* ===============================================
+       🔥 OCULTAR COMPLETAMENTE LAS FOTOS
+       EN IPHONE / CELULAR
+    =============================================== */
 
     .galeria {
 
         display:
-            none;
+            none !important;
+
+        visibility:
+            hidden !important;
+
+        width:
+            0 !important;
+
+        height:
+            0 !important;
+
+        min-width:
+            0 !important;
+
+        min-height:
+            0 !important;
+
+        max-width:
+            0 !important;
+
+        max-height:
+            0 !important;
+
+        margin:
+            0 !important;
+
+        padding:
+            0 !important;
+
+        border:
+            0 !important;
+
+        overflow:
+            hidden !important;
+
+        position:
+            absolute !important;
+
+        left:
+            -99999px !important;
     }
 
 
-    /* -----------------------------------------------
-       REDES ABAJO
-    ----------------------------------------------- */
+    .galeria *,
+    .galeria img,
+    .galeria::before,
+    .indicador {
+
+        display:
+            none !important;
+
+        visibility:
+            hidden !important;
+    }
+
+
+    /* ===============================================
+       REDES AL FINAL
+    =============================================== */
 
     .redes {
+
+        order: 5;
 
         position:
             static;
 
-        order:
-            6;
-
         width:
             100%;
+
+        flex-shrink:
+            0;
+
+        display:
+            flex;
+
+        align-items:
+            center;
 
         justify-content:
             center;
 
-        margin-top:
-            auto;
-
-        padding-top:
-            28px;
-
         gap:
-            12px;
+            13px;
+
+        margin:
+            32px auto 0;
+
+        padding:
+            0;
     }
+
 
     .red {
 
         width:
-            42px;
+            43px;
 
         height:
-            42px;
+            43px;
 
         font-size:
-            15px;
+            16px;
+
+        background:
+            rgba(255,255,255,.06);
     }
 
 }
 
 
 /* =====================================================
-   CELULARES MUY PEQUEÑOS
+   📱 IPHONE PEQUEÑO
 ===================================================== */
 
 @media(max-width:380px) {
@@ -1037,44 +1173,86 @@ body::after {
     .pantalla {
 
         padding:
-            12px;
+            10px;
     }
 
     .reproductor {
 
+        min-height:
+            calc(100vh - 20px);
+
         padding:
-            22px 15px 18px;
-    }
+            25px 14px 20px;
 
-    .caratula {
-
-        width:
-            min(74vw, 270px);
+        border-radius:
+            25px;
     }
 
     .informacion h1 {
 
         font-size:
-            25px;
+            26px;
+
+        margin-bottom:
+            18px;
+    }
+
+    .caratula {
+
+        width:
+            min(76vw,270px);
+
+        margin-bottom:
+            22px;
     }
 
     .barra-ondas {
 
         width:
-            90%;
+            92%;
+
+        margin-bottom:
+            20px;
+    }
+
+    .boton-play {
+
+        width:
+            68px;
+
+        height:
+            68px;
+    }
+
+    .volumen input {
+
+        width:
+            175px;
     }
 
     .redes {
 
-        padding-top:
-            20px;
+        margin-top:
+            26px;
+
+        gap:
+            10px;
+    }
+
+    .red {
+
+        width:
+            40px;
+
+        height:
+            40px;
     }
 
 }
 
 
 /* =====================================================
-   TABLETS
+   TABLET
 ===================================================== */
 
 @media(min-width:701px) and (max-width:1000px) {
@@ -1085,12 +1263,6 @@ body::after {
             94vw;
 
         padding:
-            4%;
-    }
-
-    .redes {
-
-        left:
             4%;
     }
 
@@ -1111,7 +1283,7 @@ body::after {
 
 
 <!-- =================================================
-     CARATULA
+     CARÁTULA
 ================================================= -->
 
 <div class="caratula">
@@ -1124,7 +1296,7 @@ alt="Radio Cenepa">
 
 
 <!-- =================================================
-     INFORMACION
+     INFORMACIÓN
 ================================================= -->
 
 <div class="informacion">
@@ -1228,7 +1400,7 @@ Presiona ▶ para escuchar la transmisión.
 
 
 <!-- =================================================
-     CARRUSEL PC
+     CARRUSEL SOLO PC
 ================================================= -->
 
 <div class="galeria">
@@ -1304,15 +1476,17 @@ alt="Radio Cenepa">
 
 
 <!-- =================================================
-     REDES
+     REDES SOCIALES
 ================================================= -->
 
 <div class="redes">
+
 
 <a
 class="red"
 href="https://www.facebook.com/radiocenepa"
 target="_blank"
+rel="noopener"
 title="Facebook">
 
 f
@@ -1324,6 +1498,7 @@ f
 class="red"
 href="https://www.instagram.com/radiocenepa"
 target="_blank"
+rel="noopener"
 title="Instagram">
 
 ◎
@@ -1335,9 +1510,10 @@ title="Instagram">
 class="red"
 href="https://www.tiktok.com/@radiocenepa"
 target="_blank"
+rel="noopener"
 title="TikTok">
 
-♪ 
+♪
 
 </a>
 
@@ -1346,11 +1522,13 @@ title="TikTok">
 class="red"
 href="https://wa.me/593999341313"
 target="_blank"
+rel="noopener"
 title="WhatsApp">
 
 ☎
 
 </a>
+
 
 </div>
 
@@ -1436,7 +1614,7 @@ async function controlarRadio() {
         catch(error) {
 
             console.error(
-                "Error al conectar con la radio:",
+                "No se pudo conectar con la radio:",
                 error
             );
 
@@ -1484,17 +1662,23 @@ function cambiarFoto() {
     if (!fotos.length)
         return;
 
+
     fotos[
         fotoActual
     ].classList.remove(
         "activa"
     );
 
-    indicadores[
-        fotoActual
-    ].classList.remove(
-        "activo"
-    );
+
+    if (indicadores[fotoActual]) {
+
+        indicadores[
+            fotoActual
+        ].classList.remove(
+            "activo"
+        );
+
+    }
 
 
     fotoActual++;
@@ -1516,11 +1700,16 @@ function cambiarFoto() {
         "activa"
     );
 
-    indicadores[
-        fotoActual
-    ].classList.add(
-        "activo"
-    );
+
+    if (indicadores[fotoActual]) {
+
+        indicadores[
+            fotoActual
+        ].classList.add(
+            "activo"
+        );
+
+    }
 
 }
 
@@ -1532,7 +1721,7 @@ setInterval(
 
 
 /* =====================================================
-   DETECTAR ERROR DE RADIO
+   ERROR DE RADIO
 ===================================================== */
 
 radio.addEventListener(
